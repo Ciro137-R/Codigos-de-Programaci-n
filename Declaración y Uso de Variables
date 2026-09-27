@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    // 1. Declaración e inicialización de variables
+    int edad = 22;
+    float estatura = 1.66;
+    char inicial = 'c';
+
+    // 2. Impresión de las variables usando printf
+    printf("Edad: %d años\n", edad);
+    printf("Estatura: %.2f metros\n", estatura);
+    printf("Inicial del nombre: %c\n", inicial);
+
+    return 0;
+}
