@@ -1,0 +1,8 @@
+#include <stdio.h>
+
+int main() {
+    // Imprime el mensaje solicitado en pantalla
+    printf("Bienvenidos al curso de Programación en C\n");
+    
+    return 0; // Indica que el programa finalizó exitosamente
+}
