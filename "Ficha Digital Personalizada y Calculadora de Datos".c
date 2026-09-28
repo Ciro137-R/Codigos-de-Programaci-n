@@ -1,3 +1,17 @@
+/*
+ * ============================================================================
+ * UNIVERSIDAD: ISAE Universidad
+ * ASIGNATURA:  Programación de Computadoras I
+ * PROFESORA:   Lorena Martinez
+ * ESTUDIANTE:  Ramsés Ciro
+ * FECHA:       26 de septiembre de 2026
+ *
+ * DESCRIPCIÓN: Programa que solicita información personal y académica del 
+ *              estudiante, organiza adecuadamente el buffer de entrada, 
+ *              calcula el año de nacimiento e imprime la ficha final alineada.
+ * ============================================================================
+ */
+
 #include <stdio.h>
 #include <string.h>
 
