@@ -38,7 +38,7 @@ void registrarPaciente(Paciente *p, int numero) {
     // Lectura de Altura
     printf("Ingrese su altura: ");
     scanf("%f", &p->altura);
-    limpiarBuffer(); // Limpiamos el '\n' sobrante del scanf antes del fgets
+    limpiarBuffer(); // Limpiamos el '\n' sobrante del scanf antes del fgets(Parte de Josúe)
 
     // Lectura del Tipo de Sangre
     printf("Ingrese su tipo de sangre (ej: O+): ");
@@ -50,7 +50,7 @@ void registrarPaciente(Paciente *p, int numero) {
     scanf(" %c", &p->codigo_urgencia);
     limpiarBuffer(); // Limpiamos el buffer para la lectura del siguiente paciente (Parte de ciro)
 
-    // Cálculo del IMC (Peso / Altura^2)
+    // Cálculo del IMC (Peso / Altura^2)(Parte de Josúe)
     p->imc = p->peso / (p->altura * p->altura);
     printf("\n");
 }
