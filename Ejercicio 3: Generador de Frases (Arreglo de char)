@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+// 1. Declarar dos arreglos de tipo char con sus valores iniciales
+char cadena1[] = "La programación en C ";
+char cadena2[] = "es muy divertida.";
+// 2. Declarar un tercer arreglo lo suficientemente grande (ej. 100 caracteres)
+ char frase_completa[100];
+// 3. Usar strcpy() para copiar cadena1 al tercer arreglo
+strcpy(frase_completa, cadena1);
+// 4. Usar strcat() para unir cadena2 al final del tercer arreglo
+strcat(frase_completa, cadena2);
+// 5. Usar strlen() para obtener la longitud total de la frase
+int longitud = strlen(frase_completa);
+// Mostrar en pantalla la frase completa y su longitud
+printf("La frase completa es: %s\n", frase_completa);
+printf("La longitud de la frase es: %d\n", longitud);
+ return 0;
+}
