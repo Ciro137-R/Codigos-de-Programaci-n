@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    int i = 10;
+    
+    // El bloque de código se ejecuta primero y luego se evalúa la condición
+    do {
+        printf("%d\n", i);
+        i--;
+    } while (i >= 1);
+    
+    return 0;
+}
