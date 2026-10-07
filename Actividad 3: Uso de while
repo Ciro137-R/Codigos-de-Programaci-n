@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    int i = 10;
+    
+    // El bucle se repite mientras i sea mayor o igual a 1
+    while (i >= 1) {
+        printf("%d\n", i);
+        i--; // Disminuir el valor de i en 1 en cada iteración
+    }
+    
+    return 0;
+}
