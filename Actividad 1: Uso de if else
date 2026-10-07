@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    int numero;
+    
+    // Solicitar al usuario que ingrese un número
+    printf("Ingrese un número entero: ");
+    scanf("%d", &numero);
+    
+    // Verificar si el residuo de la división entre 2 es cero
+    if (numero % 2 == 0) {
+        printf("El número es par\n");
+    } else {
+        printf("El número es impar\n");
+    }
+    
+    return 0;
+}
