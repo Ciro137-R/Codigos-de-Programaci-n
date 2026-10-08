@@ -1,0 +1,160 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int opcion;
+
+    // 1. Estructura Principal y Menú Interactivo
+    do {
+        printf("\n--- Sistema Integral de Gestion Academica ---\n");
+        printf("1. Modulo de Verificacion y Grados\n");
+        printf("2. Modulo de Control de Flujo con Bucles\n");
+        printf("3. Modulo de Vectores: Registro de Notas y Promedio\n");
+        printf("4. Modulo de Matrices: Registro por Trimestre\n");
+        printf("5. Modulo de Manejo de Cadenas de Texto\n");
+        printf("6. Salir\n");
+        printf("Seleccione una opcion: ");
+        scanf("%d", &opcion);
+
+        switch(opcion) {
+            case 1: {
+                // 2. Módulo de Verificación y Grados (Módulo III)
+                int edad;
+                char grado;
+                printf("\nIngrese la edad del estudiante: ");
+                scanf("%d", &edad);
+
+                if (edad >= 0) {
+                    char* categoria = (edad >= 18) ? "Mayor de edad" : "Menor de edad";
+                    printf("Categoria: %s\n", categoria);
+                } else {
+                    printf("Edad invalida.\n");
+                }
+
+                printf("Ingrese la calificacion (A, B, C): ");
+                scanf(" %c", &grado);
+                switch(grado) {
+                    case 'A':
+                        printf("Excelente!\n");
+                        break;
+                    case 'B':
+                        printf("Buen trabajo.\n");
+                        break;
+                    case 'C':
+                        printf("Puedes mejorar.\n");
+                        break;
+                    default:
+                        printf("Grado no valido.\n");
+                }
+                break;
+            }
+            case 2: {
+                // 3. Módulo de Control de Flujo con Bucles (Módulo III)
+                float nota;
+                printf("\nIngrese un lote de notas numéricas (ingrese -1 para terminar):\n");
+                while (1) {
+                    printf("Nota: ");
+                    scanf("%f", &nota);
+
+                    if (nota == -1) {
+                        printf("Finalizando ingreso de notas...\n");
+                        break; 
+                    }
+
+                    if (nota < 0 || nota > 100) {
+                        printf("Nota fuera de rango. Descartada.\n");
+                        continue; 
+                    }
+
+                    printf("Nota %.2f registrada correctamente.\n", nota);
+                }
+                break;
+            }
+            case 3: {
+                // 4. Módulo de Vectores: Registro de Notas y Promedio (Módulo IV)
+                int notas[5];
+                int suma = 0;
+                float promedio;
+
+                printf("\n");
+                for (int i = 0; i < 5; i++) {
+                    printf("Ingrese la calificacion %d: ", i + 1);
+                    scanf("%d", &notas[i]);
+                    suma += notas[i];
+                }
+
+                promedio = (float)suma / 5;
+
+                printf("Calificaciones almacenadas: ");
+                for (int i = 0; i < 5; i++) {
+                    printf("%d ", notas[i]);
+                }
+                printf("\nEl promedio final es: %.2f\n", promedio);
+                break;
+            }
+            case 4: {
+                // 5. Módulo de Matrices: Registro de Calificaciones por Trimestre (Módulo IV)
+                float notas_estudiantes[3][4];
+
+                printf("\n");
+                for (int i = 0; i < 3; i++) {
+                    printf("--- Estudiante %d ---\n", i + 1);
+                    for (int j = 0; j < 4; j++) {
+                        printf("Nota de asignatura %d: ", j + 1);
+                        scanf("%f", &notas_estudiantes[i][j]);
+                    }
+                }
+
+                printf("\nRegistro Tabular (3 estudiantes x 4 asignaturas):\n");
+                printf("Estudiante\tAsig 1\tAsig 2\tAsig 3\tAsig 4\n");
+                for (int i = 0; i < 3; i++) {
+                    printf("%d\t\t", i + 1);
+                    for (int j = 0; j < 4; j++) {
+                        printf("%.2f\t", notas_estudiantes[i][j]);
+                    }
+                    printf("\n");
+                }
+                break;
+            }
+            case 5: {
+                // 6. Módulo de Manejo de Cadenas de Texto (Módulo IV)
+                char nombre[50];
+                char apellido[50];
+                char nombre_completo[100];
+                char admin[] = "Juan Perez";
+
+                // Limpiar el buffer antes de usar fgets
+                while (getchar() != '\n');
+
+                printf("\nIngrese el nombre del estudiante: ");
+                fgets(nombre, sizeof(nombre), stdin);
+                nombre[strcspn(nombre, "\n")] = 0; 
+
+                printf("Ingrese el apellido del estudiante: ");
+                fgets(apellido, sizeof(apellido), stdin);
+                apellido[strcspn(apellido, "\n")] = 0;
+
+                strcpy(nombre_completo, nombre);
+                strcat(nombre_completo, " ");
+                strcat(nombre_completo, apellido);
+
+                printf("Nombre completo registrado: %s\n", nombre_completo);
+                printf("Longitud de la cadena: %lu caracteres\n", strlen(nombre_completo));
+
+                if (strcmp(nombre_completo, admin) == 0) {
+                    printf("Acceso concedido. Bienvenido al sistema, %s.\n", admin);
+                } else {
+                    printf("Usuario validado correctamente.\n");
+                }
+                break;
+            }
+            case 6:
+                printf("\nSaliendo del Sistema Integral de Gestion Academica...\n");
+                break;
+            default:
+                printf("\nOpcion no valida. Intente de nuevo.\n");
+        }
+    } while (opcion != 6);
+
+    return 0;
+}
